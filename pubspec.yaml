@@ -1,0 +1,27 @@
+name: newsfeed
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.2
+  get: 4.1.4
+  font_awesome_flutter: 9.1.0
+  http: 0.13.3
+  cached_network_image: 3.0.0
+  shared_preferences: 2.0.6
+  flutter: 
+    sdk: flutter
+
+dev_dependencies: 
+  lints: 1.0.1
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  assets: 
+    - assets/images/insta_logo.png
+  uses-material-design: true
+
