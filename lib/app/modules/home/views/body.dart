@@ -34,7 +34,8 @@ class InstagramBody extends GetView<HomeController> {
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
                                     image: NetworkImage(
-                                        "https://toppng.com/uploads/preview/instagram-default-profile-picture-11562973083brycehrmyv.png"),
+                                      "https://avatanplus.com/files/resources/original/5bb23ac06077d16630357f8b.jpg",
+                                    ),
                                   ),
                                 ),
                               ),
@@ -56,9 +57,12 @@ class InstagramBody extends GetView<HomeController> {
                         ],
                       ),
                     ),
-                    Image.network(
-                      controller.newsFeedData[index]["medium thumbnail"],
-                      fit: BoxFit.cover,
+                    SizedBox(
+                      height: Get.height * 0.269,
+                      child: Image.network(
+                        controller.newsFeedData[index]["medium thumbnail"],
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(16.0),
@@ -137,23 +141,20 @@ class InstagramBody extends GetView<HomeController> {
                                   Positioned(
                                     right: 0,
                                     bottom: 0,
-                                    child: Visibility(
-                                      visible: controller.visible.value,
-                                      child: InkWell(
-                                        onTap: () {
-                                          controller.pressed.value = true;
-
-                                          controller.visible.value = false;
-                                        },
-                                        child: const Text(
-                                          'More',
-                                          style: TextStyle(
-                                            color: Colors.grey,
-                                          ),
+                                    child: InkWell(
+                                      onTap: () {
+                                        controller.pressed.toggle();
+                                      },
+                                      child: Text(
+                                        controller.pressed.value
+                                            ? 'Less'
+                                            : 'More',
+                                        style: const TextStyle(
+                                          color: Colors.grey,
                                         ),
                                       ),
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
                             )

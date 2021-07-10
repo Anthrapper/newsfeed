@@ -47,7 +47,9 @@ class FeedBottomBar extends StatelessWidget {
               size: 30,
             ),
             onPressed: () {
-              Get.to(() => const BookMarks());
+              Get.to(
+                () => const BookMarks(),
+              );
             },
           ),
         ],

@@ -57,49 +57,62 @@ class Comments extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          children: [
-                            Container(
-                              height: Get.height * 0.05,
-                              width: Get.width * 0.1,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                image: DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: NetworkImage(
-                                      "https://toppng.com/uploads/preview/instagram-default-profile-picture-11562973083brycehrmyv.png"),
+                        Expanded(
+                          child: Stack(
+                            children: [
+                              Container(
+                                height: Get.height * 0.06,
+                                width: Get.width * 0.13,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: NetworkImage(
+                                        "https://avatanplus.com/files/resources/original/5bb23ac06077d16630357f8b.jpg"),
+                                  ),
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                left: Get.width * 0.06,
-                              ),
-                              child: Text(
-                                Get.find<HomeController>().commentData[index]
-                                    ['username'],
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
+                              Positioned(
+                                left: Get.width * 0.17,
+                                child: Text(
+                                  Get.find<HomeController>().commentData[index]
+                                      ['username'],
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                left: Get.width * 0.06,
-                              ),
-                              child: Text(
-                                Get.find<HomeController>().commentData[index]
-                                    ['comments'],
-                                style: const TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w300,
+                              Positioned(
+                                left: Get.width * 0.33,
+                                child: Text(
+                                  Get.find<HomeController>().commentData[index]
+                                      ['comments'],
+                                  style: const TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w300,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                              Positioned(
+                                top: 30,
+                                left: Get.width * 0.17,
+                                child: const Text(
+                                  '38 min          2 like         reply',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w300,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
                         ),
-                        const Icon(FontAwesomeIcons.heart),
+                        const Icon(
+                          FontAwesomeIcons.heart,
+                          size: 18,
+                        ),
                       ],
                     ),
                   );

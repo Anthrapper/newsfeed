@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'app/routes/app_pages.dart';
 
 Future<void> main() async {
@@ -12,6 +13,10 @@ Future<void> main() async {
         debugShowCheckedModeBanner: false,
         initialRoute: AppPages.INITIAL,
         getPages: AppPages.routes,
+        theme: ThemeData(
+          fontFamily: GoogleFonts.lato().fontFamily,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
       ),
     ),
   );

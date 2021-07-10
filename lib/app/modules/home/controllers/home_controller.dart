@@ -15,6 +15,7 @@ class HomeController extends GetxController {
   var offLineKeys = [].obs;
   var offLineData = [].obs;
   var bookmarkshowList = [].obs;
+  var titleshow = [].obs;
   Future getBookMarks() async {
     final prefs = await SharedPreferences.getInstance();
     final keys = prefs.getKeys();
@@ -75,8 +76,8 @@ class HomeController extends GetxController {
         print(newsFeedData);
         for (int x = 0; x < newsFeedData.length; x++) {
           bookmarkshowList.add(false);
+          titleshow.add(false);
         }
-        print(newsFeedData);
       } else {
         log('Something went wrong');
       }
